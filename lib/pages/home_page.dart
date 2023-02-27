@@ -3,12 +3,11 @@ import 'package:flutter_catalog/widgets/drawer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
+  final int days = 30;
+  final String name = "Shreyas";
 
   @override
   Widget build(BuildContext context) {
-    final int days = 30;
-    final String name = "Shreyas";
-
     return Scaffold(
       appBar: AppBar(
         title: Text("Catalog App"),
