@@ -7,6 +7,7 @@ class MyTheme {
         cardColor: Colors.white,
         canvasColor: creamColor,
         fontFamily: GoogleFonts.poppins().fontFamily,
+        // ignore: deprecated_member_use
         buttonColor: darkBluishColor,
         appBarTheme: AppBarTheme(
             color: Colors.white,
@@ -23,13 +24,16 @@ class MyTheme {
         canvasColor: darkCreamColor,
         brightness: Brightness.dark,
         fontFamily: GoogleFonts.poppins().fontFamily,
+        // ignore: deprecated_member_use
         buttonColor: lighBluishColor,
         appBarTheme: AppBarTheme(
-            color: Colors.black,
-            elevation: 0.0,
-            iconTheme: const IconThemeData(color: Colors.white),
-            toolbarTextStyle: Theme.of(context).textTheme.bodyMedium,
-            titleTextStyle: Theme.of(context).textTheme.titleLarge),
+          color: Colors.black,
+          elevation: 0.0,
+          textTheme: Theme.of(context).textTheme,
+          iconTheme: const IconThemeData(color: Colors.white),
+          toolbarTextStyle: Theme.of(context).textTheme.bodyMedium,
+          titleTextStyle: Theme.of(context).textTheme.titleLarge,
+        ),
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.deepPurple,
         ).copyWith(secondary: Colors.white, brightness: Brightness.dark),
