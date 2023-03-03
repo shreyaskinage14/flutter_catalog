@@ -15,9 +15,9 @@ class HomeDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -26,8 +26,8 @@ class HomeDetailPage extends StatelessWidget {
             ElevatedButton(
                     onPressed: () {},
                     style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(MyTheme.darkBluishColor),
+                        backgroundColor: MaterialStateProperty.all(
+                            context.theme.buttonColor),
                         shape: MaterialStateProperty.all(
                           const StadiumBorder(),
                         )),
@@ -52,10 +52,7 @@ class HomeDetailPage extends StatelessWidget {
               width: context.screenWidth,
               child: Column(
                 children: [
-                  catalog.name.text.xl4
-                      .color(MyTheme.darkBluishColor)
-                      .bold
-                      .make(),
+                  catalog.name.text.xl4.color(context.accentColor).bold.make(),
                   catalog.desc.text.xl.textStyle(context.captionStyle).make(),
                   10.heightBox,
                   "Consequat aliqua dolor duis id ut. Elit eiusmod occaecat fugiat minim incididunt. Non est esse adipisicing duis adipisicing anim nostrud."
@@ -64,7 +61,7 @@ class HomeDetailPage extends StatelessWidget {
                       .make()
                       .p16()
                 ],
-              ).py64().color(Colors.white),
+              ).py64().color(context.cardColor),
             ),
           ))
         ]),
