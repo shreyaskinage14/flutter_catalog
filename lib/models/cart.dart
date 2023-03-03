@@ -1,11 +1,20 @@
 import 'package:flutter_catalog/models/catalog.dart';
 
-class CartModal {
+class CartModel {
+  static final cartModel = CartModel._internal();
+
+  CartModel._internal();
+
+  factory CartModel() => cartModel;
   // catalog field
   late CatalogModel _catalog;
 
 // collection if ids - stored ids of each item
-  final List<int> _itemsIds = [];
+  final List<dynamic> _itemsIds = [];
+
+  set catalog(CatalogModel newCatalog) {
+    _catalog = newCatalog;
+  }
 
   // get items in the cart
   List<Item> get items => _itemsIds.map((e) => _catalog.getById(e)).toList();
@@ -16,9 +25,9 @@ class CartModal {
 
   // Add item
 
-  // void add(Item item) {
-  //   _itemsIds.add(item.id);
-  // }
+  void add(Item item) {
+    _itemsIds.add(item.id);
+  }
 
   // remove item
   void remove(Item item) {

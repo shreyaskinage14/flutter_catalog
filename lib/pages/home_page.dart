@@ -49,6 +49,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: context.canvasColor,
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+        // ignore: deprecated_member_use
         backgroundColor: context.theme.buttonColor,
         child: const Icon(
           CupertinoIcons.cart,
