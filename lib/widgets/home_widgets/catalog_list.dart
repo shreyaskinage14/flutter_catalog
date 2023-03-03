@@ -15,7 +15,7 @@ class CatalogList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: CatalogModel.items.length,
       itemBuilder: (context, index) {
-        final catalog = CatalogModel.getByPosition(index);
+        final catalog = CatalogModel.items[index];
         return InkWell(
             onTap: () => Navigator.push(
                 context,
@@ -59,6 +59,7 @@ class CatalogItem extends StatelessWidget {
                     onPressed: () {},
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
+                            // ignore: deprecated_member_use
                             context.theme.buttonColor),
                         shape: MaterialStateProperty.all(
                           const StadiumBorder(),
