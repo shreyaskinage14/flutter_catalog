@@ -48,8 +48,11 @@ class _CartTotal extends StatelessWidget {
         30.widthBox,
         ElevatedButton(
           onPressed: () {
-            ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: "Buying not supported yet".text.make()));
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: "Buying not supported yet"
+                    .text
+                    .color(Colors.white)
+                    .make()));
           },
           style: ButtonStyle(
               backgroundColor:
