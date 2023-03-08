@@ -8,15 +8,15 @@ import '../../models/catalog.dart';
 
 class AddToCart extends StatelessWidget {
   final Item catalog;
-  AddToCart({
+  const AddToCart({
     super.key,
     required this.catalog,
   });
   @override
   Widget build(BuildContext context) {
     VxState.watch(context, on: [AddMutation, RemoveMutation]);
-    final CartModel _cart = (VxState.store as MyStore).cart;
-    bool isInCart = _cart.items.contains(catalog) ?? false;
+    final CartModel cart = (VxState.store as MyStore).cart;
+    bool isInCart = cart.items.contains(catalog);
     return ElevatedButton(
         onPressed: () {
           if (!isInCart) {
